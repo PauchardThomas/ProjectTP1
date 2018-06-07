@@ -24,7 +24,7 @@ public final class Application {
 	public static void main(final String[] args){
 		System.out.println("Hello W !!");
 		final DateTime dateTime = DateTime.now();
-		System.out.println(dateTime.year());
+		System.out.println(dateTime);
 	}
 	
 	/**
