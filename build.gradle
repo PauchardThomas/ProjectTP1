@@ -1,7 +1,7 @@
 apply plugin:'java'
 apply plugin:'eclipse'
 apply plugin: 'pmd'
-//apply plugin: 'checkstyle'
+apply plugin: 'checkstyle'
 apply plugin: 'findbugs'
 
 repositories {
@@ -34,6 +34,15 @@ tasks.withType(FindBugs) {
         xml.enabled true
         html.enabled false
     }
+}
+checkstyle {
+    checkstyleTest.enabled = false
+    toolVersion '7.8.1'
+    configFile file("config/checkstyle/checkstyle.xml")
+    ignoreFailures = true
+}
+checkstyleMain {
+    source ='src/main/java'
 }
 
 test {
