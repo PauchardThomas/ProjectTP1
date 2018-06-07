@@ -11,6 +11,12 @@ import org.joda.time.DateTime;
  */
 public final class Application {
 	
+	
+	private Application()
+	{
+		super();
+	}
+	
 	/**
 	 * Entry point of application.
 	 * @param args Arguments from CLI
