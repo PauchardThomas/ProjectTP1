@@ -9,25 +9,26 @@ import org.joda.time.DateTime;
  * @author Thomas
  * @version 1.0
  */
-public class Application {
+public final class Application {
 	
 	/**
 	 * Entry point of application.
 	 * @param args Arguments from CLI
 	 */
-	public static void main(String[] args){
+	public static void main(final String[] args){
 		System.out.println("Hello W !!");
-		DateTime dateTime = DateTime.now();
+		final DateTime dateTime = DateTime.now();
+		System.out.println(dateTime.year());
 	}
 	
 	/**
 	 * Add two value.
-	 * @param i first value
-	 * @param j second value
+	 * @param number1 first value
+	 * @param number2 second value
 	 * @return result of addition
 	 */
-	public static int add(int i, int j)
+	public static int add(final int number1,final int number2)
 	{
-		return i + j;
+		return number1 + number2;
 	}
 }
