@@ -2,7 +2,7 @@ apply plugin:'java'
 apply plugin:'eclipse'
 apply plugin: 'pmd'
 //apply plugin: 'checkstyle'
-//apply plugin: 'findbugs'
+apply plugin: 'findbugs'
 
 repositories {
 	jcenter()
@@ -28,6 +28,14 @@ tasks.withType(Pmd){
     html.enabled true
   }
 }
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
+
 test {
   ignoreFailures = true
 }
