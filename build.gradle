@@ -3,6 +3,7 @@ apply plugin:'eclipse'
 apply plugin: 'pmd'
 apply plugin: 'checkstyle'
 apply plugin: 'findbugs'
+apply plugin: "jacoco"
 
 repositories {
 	jcenter()
@@ -43,6 +44,18 @@ checkstyle {
 }
 checkstyleMain {
     source ='src/main/java'
+}
+
+jacoco {
+    toolVersion = "0.8.1"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination file("${buildDir}/jacocoHtml")
+    }
 }
 
 test {
